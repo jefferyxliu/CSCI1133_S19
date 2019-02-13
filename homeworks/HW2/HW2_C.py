@@ -1,4 +1,4 @@
-# CSCI 1133, Lab Section 013, HW 2 Jeffery Liu, Problem B
+# CSCI 1133, Lab Section 013, HW 2 Jeffery Liu, Problem C
 
 #calories burned functions, short and tall:
 def calories_short(age,weight,heart_rate,time):
@@ -23,7 +23,7 @@ def main():
     print('Duration of workout:', time)
 
     #test for tall or short and then print calories burned.
-    if height > 5.6 or height == 5.10 or height == 5.11:
+    if height > 5.6:
         print('The number of calories burned for this tall person is', int(calories_tall(age,weight,heart_rate,time)), 'calories.')
     else:
         print('The number of calories burned for this short person is', int(calories_short(age,weight,heart_rate,time)), 'calories.')    
