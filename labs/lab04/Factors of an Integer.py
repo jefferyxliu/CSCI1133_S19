@@ -13,12 +13,13 @@ def factorize(integer):
 
 y_n = 'y'
 while y_n == 'y':
-    factors = factorize(int(input('Input a positive integer: ')))
-    print('Factors: ',end = '')
 
+    factors = factorize(int(input('Input a positive integer: '))) #prompts integer and factors with function
+
+    print('Factors: ',end = '')
     for n in range(0,len(factors)-1):
-        print(factors[n], end = '*')
-    print(factors[-1])
+        print(factors[n], end = '*') #prints each factor followed by *
+    print(factors[-1]) #prints last factor without *
     
-    y_n = input('Continue (y/n)? ')
+    y_n = input('Continue (y/n)? ') #loops if y is selected
     print()

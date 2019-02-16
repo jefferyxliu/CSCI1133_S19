@@ -1,8 +1,9 @@
 # CSCI 1133, Lab Section 013, lab03 Jeffery Liu, Roman Numerals
 
+#Roman numeral function
 def romannum(integer):
-    num = ''
-    while integer > 0:
+    num = '' #builds Roman numeral string
+    while integer > 0: #subtracts corresponding value as letters are added to string
         if integer >= 1000:
             num += 'M'
             integer -= 1000
@@ -59,12 +60,13 @@ def romannum(integer):
 
 integer = 0
 n = 0
-while not integer in range(1,999):
-    integer = int(input('Enter and integer value from 1 to 999: '))
+while not integer in range(1,999): #loops back to input if invalid input
+    integer = int(input('Enter and integer value from 1 to 999: ')) #prompts integer input 
     if not integer in range(1,999):
         print('Invalid input.')
-        n +=1
+        n +=1 #counts invalid inputs
     if n == 4:
-        raise SystemExit
+        raise SystemExit #exits program if input is invalid for four times
+
 print('Roman numeral equivalent:', romannum(integer))
         
