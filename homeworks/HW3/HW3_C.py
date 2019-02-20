@@ -32,5 +32,6 @@ if T <= 0:
 #prints face value and monthly payment only if in range
 if 100 <= P <= 10000 and 0 < R <= 15 and 0 < T <= 10:
     print()
-    print('The face value of the loan is: $' + str(round(F,2)))
+    #print('The face value of the loan is: $' + str(round(F,2)))
+    print('The face value of the loan is: $' + str(format(F,'0.2f')))
     print('Your monthly payment each month for', int(T * 12) , 'months is: $' + str(round(F / T / 12,2)))
