@@ -14,22 +14,22 @@ class Poly:
             self.coefficients = [constant] + [x for x in args[:n + 1]]
 
         elif isinstance(constant, str):
-            c = constant.replace(' ','').replace('-','+-').split('+')
+            c = constant.replace(' ','').replace('-','+-').lstrip('+').split('+')
 
             self.coefficients = [0]    
             for x in c:
                 if 'x' in x:
-                    if x[:index('x')] in ['','-']:
+                    if x[:x.index('x')] in ['','-']:
                         x = x.replace('x','1x')
                         
                     if '^' in x:
-                        self.coefficients.addTerm(int(x[index('^') + 1:]), float(x[:index('x')]))
+                        self.addTerm(int(x[x.index('^') + 1:]), float(x[:x.index('x')]))
                         
                     else:
-                        self.coefficients.addTerm(1, float(x[:index('x')]))
+                        self.addTerm(1, float(x[:x.index('x')]))
                         
                 else:
-                    self.coefficients.addTerm(0, float(x,0))
+                    self.addTerm(0, float(x))
 
         elif isinstance(constant, list):
             n = len(constant) - 1
