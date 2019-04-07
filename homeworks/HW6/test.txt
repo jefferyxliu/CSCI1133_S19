@@ -1,0 +1,20 @@
+am 2
+
+am 3
+
+are 3
+
+happy 1
+
+happy 2
+
+how 3
+
+i 3
+
+sandwich 3
+
+yes 1
+
+you 3
+
