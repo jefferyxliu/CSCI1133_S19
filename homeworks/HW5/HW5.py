@@ -73,7 +73,7 @@ def cnt_occur(list1, value):
 def helper(list1, element, n = 0):
 
     # base case: an empty list has no occurences of the element.
-    if n = len(list1):
+    if n == len(list1):
         return []
 
     # looking at the fist position:
