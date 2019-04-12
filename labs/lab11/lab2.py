@@ -39,6 +39,22 @@ class Vector:
     def __mul__(self, scalar):
         return Vector([scalar * x for x in self.components])
 
+    def dot(self, other):
+        if len(self.components) <= len(other.components):
+            return sum([self.components[n] * other.components[n] for n in range(len(self.components))])
+        
+        if len(self.components) > len(other.components):
+            return sum([self.components[n] * other.components[n] for n in range(len(other.components))])
+
+    def cross(self, other):
+        if len(self.components) == 3 and len(other.components) == 3:
+            u = self.components
+            v = other.components
+
+            return Vector([u[1] * v[2] - u[2] * v[1], - (u[0] * v[2] - u[2] * v[0]), u[0] * v[1] - u[1] * v[0]])
+
+
+
 
 class Particle:
 
