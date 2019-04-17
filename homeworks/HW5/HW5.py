@@ -81,11 +81,11 @@ def helper(list1, element, n = 0):
     # if it is the element, concatenate its position with the list of positions
     # after it.
     elif list1[n] == element:
-        return [n] + position(list1, element, n + 1)
+        return [n] + helper(list1, element, n + 1)
 
     # if it is not the element, just move on the the rest of the list.
     else:
-        return position(list1, element, n + 1)
+        return helper(list1, element, n + 1)
 
 
 def position(list1, element):
