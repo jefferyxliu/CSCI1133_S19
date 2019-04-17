@@ -221,7 +221,7 @@ class VideoGame:
         return self.esrb
 
     def get_average(self):
-        return round(sum((i + 1) * self.ratings[i] for i in range(len(self.ratings))) / sum(self.ratings))
+        return int(sum((i + 1) * self.ratings[i] for i in range(len(self.ratings))) / sum(self.ratings))
 
     def __str__(self):
         return 'Title: {}, ESRB Rating: {}, Average Rating: {}'.format(self.title, self.esrb, self.get_average())
@@ -230,9 +230,9 @@ class VideoGame:
 # ===================TESTS========================
 if __name__ == '__main__':
     # 3 VideoGame instance objects
-    game1 = VideoGame('Octopath Traveler', 'T', [14, 15, 15, 33, 367])
-    game2 = VideoGame('Pokémon Ultra Moon', 'E', [32, 14, 21, 57, 384])
-    game3 = VideoGame('Super Mario Odyssey', 'E10+', [57, 17, 58, 149, 2208])
+    game1 = VideoGame('Octopath Traveler', 'T', [367, 33, 15, 15, 14])
+    game2 = VideoGame('Pokémon Ultra Moon', 'E', [384, 57, 21, 14, 32])
+    game3 = VideoGame('Super Mario Odyssey', 'E10+', [2208, 149, 58, 17, 57])
 
     # put in one list.
     gamelist = [game1, game2, game3]
@@ -251,7 +251,6 @@ if __name__ == '__main__':
     print(gamelist[0].get_esrb())
 
     print(gamelist[2].get_average())
-    
     
 
 
