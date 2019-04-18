@@ -221,7 +221,10 @@ class VideoGame:
         return self.esrb
 
     def get_average(self):
-        return int(sum((i + 1) * self.ratings[i] for i in range(len(self.ratings))) / sum(self.ratings))
+        if sum(self.ratings) == 0:
+            return 0
+        else:
+            return int(sum((i + 1) * self.ratings[i] for i in range(len(self.ratings))) / sum(self.ratings))
 
     def __str__(self):
         return 'Title: {}, ESRB Rating: {}, Average Rating: {}'.format(self.title, self.esrb, self.get_average())
